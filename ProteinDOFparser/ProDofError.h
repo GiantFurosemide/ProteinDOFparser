@@ -11,8 +11,9 @@
 
 class ProDofError{
 public:
-    ProDofError(const std::string& message): message(message){};
-    const std::string message;
+    std::string message;
+    ProDofError(const std::string& message);
+    
 };
 #endif
 

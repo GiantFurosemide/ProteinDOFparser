@@ -16,6 +16,7 @@
 #include "Selector.h"
 #include "ProDofError.h"
 #include "ArgParser.h"
+#include "Parameter.h"
 
 /**
  * @brief Main class for manipulating protein structures
@@ -29,16 +30,17 @@ public:
     Protocol protocol;
     EnergyScoreFunction energy_score_function;
     Selector selector;
+    Parameter parameters;
     
     std::string usage;
     
     /**
-     * @brief Reads and parses command line arguments
+     * @brief Reads and parses command line arguments and stores them in parameters
      * @param argc Number of arguments
      * @param argv Array of argument strings
      * @throws ProDofError If invalid arguments are provided
      */
-    void read();
+    void read(int argc, char *argv[]);
 
     /**
      * @brief Initializes the manipulator with loaded data

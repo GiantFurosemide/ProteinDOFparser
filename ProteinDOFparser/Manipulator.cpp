@@ -10,7 +10,17 @@
  * manipulator implementation
  */
 
+void Manipulator::read(int argc, char *argv[]) {
+    ArgParser arg_parser;
+    arg_parser.parse(argc, argv);
+    // store parameters in manipulator
+    this->parameters = arg_parser.parameters;
+    this->usage = arg_parser.usage;
+}
 
-void Manipulator::run_protocol() {
 
+
+
+void Manipulator::report() {
+    std::cout << this->usage << std::endl;
 }

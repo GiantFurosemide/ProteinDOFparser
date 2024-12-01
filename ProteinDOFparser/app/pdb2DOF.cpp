@@ -1,5 +1,9 @@
 #include <ProteinDOFparser/Manipulator.h>
 
+/**
+ * @brief Main function for the ProteinDOFparser application
+ * @details input: pdb file, output: DOF file
+ */
 int main(int argc, char *argv[])
 {
 	Manipulator manipulator;

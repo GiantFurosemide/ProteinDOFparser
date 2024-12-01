@@ -12,7 +12,8 @@
 #include <map>
 #include <iostream>
 #include <sstream>
+#include <format>
 
-
+#include "ProDofError.h"
 
 #endif //_PROTEINDOFPARSER_COMMON_H
