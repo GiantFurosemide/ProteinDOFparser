@@ -1,3 +1,4 @@
 .DS_Store
-alphafold_db
+alphafold_data
 extern/
+.vscode
