@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "CifDataInfo.C": "cpp",
+        "CifExcept.C": "cpp",
+        "CifFile.C": "cpp"
+    }
+}

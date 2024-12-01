@@ -4,20 +4,20 @@
  */
 
 
-#include "Poes.h"
+#include "Pose.h"
 
 /**
  * Poes implementation
  */
 
 
-void Poes::init() {
+void Pose::init() {
 
 }
 
 /**
  * @return string
  */
-std::string Poes::report() {
+std::string Pose::report() {
     return "";
 }

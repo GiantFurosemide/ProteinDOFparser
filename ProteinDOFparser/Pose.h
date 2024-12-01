@@ -9,7 +9,7 @@
 
 #include "ChainGroup.h"
 
-class Poes {
+class Pose {
 public: 
     std::string name;
     ChainGroup chains;
