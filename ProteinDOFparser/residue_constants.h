@@ -1,11 +1,14 @@
 // constant values from alphafold/common/residue_constants.py
 // https://github.com/google-deepmind/alphafold
 
+#ifndef RESIDUE_CONSTANTS_H
+#define RESIDUE_CONSTANTS_H
+
 
 #include <map>
 #include <string>
 #include <vector>
-#include <tuple>
+
 
 namespace residue_constants {
 
@@ -76,7 +79,7 @@ chi_angles_mask = {
 
 
 
-
+// struct for coordinate
 struct coord {
     double x;
     double y;
@@ -88,25 +91,36 @@ struct coord {
 
 
 
+//Atoms positions relative to the 8 rigid groups, defined by the pre-omega, phi,
+//psi and chi angles:
+//0: 'backbone group',
+//1: 'pre-omega-group', (empty)
+//2: 'phi-group', (currently empty, because it defines only hydrogens)
+//3: 'psi-group',
+//4,5,6,7: 'chi1,2,3,4-group'
+//The atom positions are relative to the axis-end-atom of the corresponding
+//rotation axis. The x-axis is in direction of the rotation axis, and the y-axis
+//is defined such that the dihedral-angle-definiting atom (the last entry in
+//chi_angles_atoms above) is in the xy-plane (with a positive y-coordinate).
+//format: [atom_name, group_idx, rel_position]
 struct rigid_group_atom_position {
     std::string atom_name;
     int group_idx;
     coord atom_position;
 };
-/*
- Atoms positions relative to the 8 rigid groups, defined by the pre-omega, phi,
- psi and chi angles:
- 0: 'backbone group',
- 1: 'pre-omega-group', (empty)
- 2: 'phi-group', (currently empty, because it defines only hydrogens)
- 3: 'psi-group',
- 4,5,6,7: 'chi1,2,3,4-group'
- The atom positions are relative to the axis-end-atom of the corresponding
- rotation axis. The x-axis is in direction of the rotation axis, and the y-axis
- is defined such that the dihedral-angle-definiting atom (the last entry in
- chi_angles_atoms above) is in the xy-plane (with a positive y-coordinate).
- format: [atom_name, group_idx, rel_position]
-*/
+
+// Atoms positions relative to the 8 rigid groups, defined by the pre-omega, phi,
+// psi and chi angles:
+// 0: 'backbone group',
+// 1: 'pre-omega-group', (empty)
+// 2: 'phi-group', (currently empty, because it defines only hydrogens)
+// 3: 'psi-group',
+// 4,5,6,7: 'chi1,2,3,4-group'
+// The atom positions are relative to the axis-end-atom of the corresponding
+// rotation axis. The x-axis is in direction of the rotation axis, and the y-axis
+// is defined such that the dihedral-angle-definiting atom (the last entry in
+// chi_angles_atoms above) is in the xy-plane (with a positive y-coordinate).
+// format: [atom_name, group_idx, rel_position]
 const std::map<std::string, std::vector<rigid_group_atom_position>> 
 rigid_group_atom_positions = {
     {"ALA", {
@@ -412,7 +426,6 @@ const std::map<std::string, std::string> atom_type_to_element = {
 };
 
 
-
 struct Bond {
     std::string atom1_name;
     std::string atom2_name;
@@ -498,12 +511,14 @@ const std::map<std::string, int> restype_order = []() {
 const int restype_num = restypes.size(); // := 20
 const int unk_restype_index = restype_num; // Catch-all index for unknown restypes
 
+// 1-letter residue name mapping with 'X'
 const std::vector<std::string> restypes_with_x = []() {
     std::vector<std::string> types = restypes;
     types.push_back("X");
     return types;
 }();
 
+// 1-letter residue name mapping with 'X'
 const std::map<std::string, int> restype_order_with_x = []() {
     std::map<std::string, int> order;
     for (size_t i = 0; i < restypes_with_x.size(); i++) {
@@ -511,7 +526,10 @@ const std::map<std::string, int> restype_order_with_x = []() {
     }
     return order;
 }();
-const std::map<std::string, std::string> restype_1to3 = {
+
+// 1-to-3 letter residue name mapping
+const std::map<std::string, std::string> 
+restype_1to3 = {
     {"A", "ALA"},
     {"R", "ARG"}, 
     {"N", "ASN"},
@@ -538,7 +556,8 @@ const std::map<std::string, std::string> restype_1to3 = {
 // 1-to-1 mapping of 3 letter names to one letter names. The latter contains
 // many more, and less common, three letter names as keys and maps many of these
 // to the same one letter name (including 'X' and 'U' which we don't use here).
-const std::map<std::string, std::string> restype_3to1 = []() {
+const std::map<std::string, std::string> 
+restype_3to1 = []() {
     std::map<std::string, std::string> map;
     for (const auto& [k, v] : restype_1to3) {
         map[v] = k;
@@ -549,6 +568,7 @@ const std::map<std::string, std::string> restype_3to1 = []() {
 // Define a restype name for all unknown residues.
 const std::string unk_restype = "UNK";
 
+// 3-letter residue name mapping with 'UNK'
 const std::vector<std::string> resnames = []() {
     std::vector<std::string> names;
     for (const auto& r : restypes) {
@@ -558,6 +578,7 @@ const std::vector<std::string> resnames = []() {
     return names;
 }();
 
+// 3-letter residue name mapping with 'UNK' to index mapping
 const std::map<std::string, int> resname_to_idx = []() {
     std::map<std::string, int> map;
     for (size_t i = 0; i < resnames.size(); i++) {
@@ -566,4 +587,8 @@ const std::map<std::string, int> resname_to_idx = []() {
     return map;
 }();
 
-}
+
+
+} // namespace residue_constants end
+
+#endif // RESIDUE_CONSTANTS_H
