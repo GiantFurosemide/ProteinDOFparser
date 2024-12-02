@@ -20,7 +20,7 @@ import os
 from typing import List, Mapping, Tuple
 
 import numpy as np
-import tree
+import tree # type: ignore
 
 # Internal import (35fd).
 

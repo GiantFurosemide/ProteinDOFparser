@@ -16,8 +16,8 @@
 import dataclasses
 import io
 from typing import Any, Mapping, Optional
-from alphafold.common import residue_constants
-from Bio.PDB import PDBParser
+from alphafold.common import residue_constants # type: ignore
+from Bio.PDB import PDBParser # type: ignore
 import numpy as np
 
 FeatureDict = Mapping[str, np.ndarray]
