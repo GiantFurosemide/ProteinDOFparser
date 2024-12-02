@@ -55,12 +55,6 @@ public:
     void run();
 
     /**
-     * @brief Executes a specific protocol
-     * @return void
-     */
-    void run_protocol();
-
-    /**
      * @brief Generates a report of the manipulation results
      * @return void
      */ 
