@@ -1,5 +1,5 @@
 .DS_Store
-alphafold_data
+#alphafold_data
 extern/
 .vscode
-StarUML/
+#StarUML/
