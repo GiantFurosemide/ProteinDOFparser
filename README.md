@@ -1,6 +1,6 @@
 # ProteinDOFparser
 
-A tool to manipulate DOF of protein for analysis and generation.
+A tool to manipulate DOF of protein for structural analysis and generation.
 
 ## Rosetta philosophy
 
