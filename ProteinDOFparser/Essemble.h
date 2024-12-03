@@ -8,9 +8,9 @@
 #define _ESSEMBLE_H
 
 #include "Group.h"
-#include "Poes.h"
+#include "Pose.h"
 
-class Essemble: public Group<Poes> {
+class Essemble: public Group<Pose> {
 };
 
 #endif //_ESSEMBLE_H
