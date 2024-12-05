@@ -10,6 +10,7 @@ class Parameter {
 public:
     std::string input_file_path;
     std::string output_file_path;
+    std::string selector_file_path;
 };
 
 #endif // _PARAMETER_H

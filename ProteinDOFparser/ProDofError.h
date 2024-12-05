@@ -9,11 +9,11 @@
 
 
 
-class ProDofError{
+class ProDofError: public std::exception {
 public:
     std::string message;
     ProDofError(const std::string& message);
-    
+    const char* what() const noexcept override;
 };
 #endif
 

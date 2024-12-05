@@ -13,10 +13,9 @@ class Pose {
 public: 
     std::string name;
     ChainGroup chains;
-    
-void init();
-    
-std::string report();
+    Pose(std::string input_file_path);
+    void init();
+    std::string report();
 };
 
 #endif //_POES_H

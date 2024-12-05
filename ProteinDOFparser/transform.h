@@ -58,6 +58,10 @@ residue_constants::coord rotation(
     transformed_atoms.x = rotation_matrix[0][0] * (atoms.x - rotation_center.x) + rotation_matrix[0][1] * (atoms.y - rotation_center.y) + rotation_matrix[0][2] * (atoms.z - rotation_center.z) + rotation_center.x;
     transformed_atoms.y = rotation_matrix[1][0] * (atoms.x - rotation_center.x) + rotation_matrix[1][1] * (atoms.y - rotation_center.y) + rotation_matrix[1][2] * (atoms.z - rotation_center.z) + rotation_center.y;
     transformed_atoms.z = rotation_matrix[2][0] * (atoms.x - rotation_center.x) + rotation_matrix[2][1] * (atoms.y - rotation_center.y) + rotation_matrix[2][2] * (atoms.z - rotation_center.z) + rotation_center.z;
+    
+    transformed_atoms.x += rotation_center.x;
+    transformed_atoms.y += rotation_center.y;
+    transformed_atoms.z += rotation_center.z;
     return transformed_atoms;
 };
 

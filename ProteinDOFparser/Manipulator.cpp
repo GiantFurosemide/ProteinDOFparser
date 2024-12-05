@@ -28,9 +28,14 @@ void Manipulator::read(int argc, char *argv[]) {
  */
 void Manipulator::init() {
     // read parameters
+    std::string input_file_path = this->parameters.input_file_path;
+    std::string output_file_path = this->parameters.output_file_path;
+    std::string selector_file_path = this->parameters.selector_file_path;
     // initialize Pose
-    // initialize DOF
-    // initialize selector
+    this->pose_in = Pose(input_file_path);
+    // initialize DOF()// already initialized in Pose
+    // initialize selector (default: all atoms)
+    this->selector = Selector(selector_file_path);
     // initialize protocol
 
 

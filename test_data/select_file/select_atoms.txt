@@ -1,0 +1,31 @@
+# comment line : start with '#'
+# empty line : skip
+# [ sel_name_1 ] : selector name
+# chain A and residue 1-10 : selector
+# one line one selector, one name one selector
+# 
+# syntax similar to pymol select command
+# chain : chain name, e.g. A, B, C, etc.
+# resn : residue name, e.g. GLY, ALA, etc.
+# resi : residue index, e.g. 1, 2, 3, etc.
+# atom : atom name, e.g. CA, CB, etc.
+# boolean operator : and, or, not
+# all : select all atoms
+#
+#
+# usage:
+#
+# select chain A and resn 1-10, name as sel_name_1
+#[ sel_name_1 ]
+# chain A and resn 1-10
+#
+# select chain B and residue 1-10 and atom CA, name as sel_name_2
+#[ sel_name_2 ]
+# chain B and resn 1-10 and atom CA
+# select all atoms
+#[ sel_name_3 ]
+# all
+
+
+[ sel_name_3 ]
+all

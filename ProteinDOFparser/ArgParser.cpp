@@ -14,6 +14,7 @@ void ArgParser::parse(int argc, char *argv[]) {
 Options:
     -i, --input_file <path>    Input PDB file path
     -o, --output_file <path>   Output DOF file path
+    -s, --selector_file <path> Selector file path
     -v, --verbose              Print verbose output
     -h, --help                 Print help message
     )";
@@ -22,11 +23,13 @@ Options:
 
     bool verbose = false;
     bool help = false;
+    std::string selector_file_path = "select_atoms.txt";
 
     // argument options parsing
     static struct option long_options[] = {
         {"input_file", required_argument, 0, 'i'},
         {"output_file", required_argument, 0, 'o'},
+        {"selector_file", no_argument, 0, 's'},
         {"verbose", no_argument, 0, 'v'},
         {"help", no_argument, 0, 'h'},
         {0, 0, 0, 0}
@@ -37,6 +40,7 @@ Options:
         switch (c) {
             case 'i': this->parameters.input_file_path = optarg; break;
             case 'o': this->parameters.output_file_path = optarg; break;
+            case 's': this->parameters.selector_file_path = optarg; break;
             case 'v': verbose = true; break;
             case 'h': help = true; break;
             default: std::cerr << usage << std::endl; exit(EXIT_FAILURE);

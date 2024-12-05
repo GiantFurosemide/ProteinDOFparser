@@ -9,5 +9,9 @@ ProDofError::ProDofError(const std::string& message) {
     auto time = std::chrono::system_clock::to_time_t(now);
     std::stringstream ss;
     ss << "[" << std::put_time(std::localtime(&time), "%Y-%m-%d %H:%M:%S") << "] " << message;
-    this->message = ss.str();
+    this->message = ss.str();   
+}
+
+const char* ProDofError::what() const noexcept {
+    return this->message.c_str();
 }
