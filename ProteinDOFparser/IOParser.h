@@ -13,6 +13,8 @@ class IOParser {
 public: 
     std::string input_file_path;
     std::string output_file_path;
+
+    IOParser():input_file_path(""), output_file_path("") {};
 };
 
 #endif //_IOPARSER_H

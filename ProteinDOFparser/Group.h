@@ -19,6 +19,8 @@ public:
     
     void report();
 
+    Group():data_size(0) {};
+
 protected: 
     
     std::vector<T> data;

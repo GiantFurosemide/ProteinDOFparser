@@ -14,6 +14,6 @@
 /**
  * @return string
  */
-string Residue::report() {
+std::string Residue::report() {
     return "";
 }

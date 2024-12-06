@@ -3,3 +3,4 @@ alphafold_data
 extern/
 .vscode
 StarUML/
+build/

@@ -14,6 +14,6 @@
 /**
  * @return vector<float>
  */
-vector<float> EnergyFunctionCalculator::scoreFuntion() {
-    return null;
+std::vector<float> EnergyFunctionCalculator::scorefunction() {
+    return std::vector<float>(); // Return empty vector instead of null
 }

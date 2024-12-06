@@ -31,8 +31,9 @@ public:
     EnergyScoreFunction energy_score_function;
     Selector selector;
     Parameter parameters;
-    
     std::string usage;
+
+    Manipulator();
     
     /**
      * @brief Reads and parses command line arguments and stores them in parameters

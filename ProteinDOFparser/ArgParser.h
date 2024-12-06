@@ -13,6 +13,9 @@ class ArgParser : public IOParser {
 public:
     Parameter parameters;
     std::string usage;
+    ArgParser();
+
+    
     // parse command line arguments and store them in parameters
     void parse(int argc, char *argv[]);
 };

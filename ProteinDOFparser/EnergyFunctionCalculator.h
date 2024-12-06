@@ -7,11 +7,12 @@
 #ifndef _ENERGYFUNCTIONCALCULATOR_H
 #define _ENERGYFUNCTIONCALCULATOR_H
 
+#include "ProteinDOFparser_common.h"
 class EnergyFunctionCalculator {
 public: 
-    vector<float> weight;
+    std::vector<float> weight;
     
-vector<float> scoreFuntion();
+    std::vector<float> scorefunction();
 };
 
 #endif //_ENERGYFUNCTIONCALCULATOR_H
