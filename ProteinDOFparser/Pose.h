@@ -13,6 +13,8 @@ class Pose {
 public: 
     std::string name;
     ChainGroup chains;
+
+    Pose();
     Pose(std::string input_file_path);
     void init();
     std::string report();

@@ -37,7 +37,7 @@ void Manipulator::init() {
     // initialize selector (default: all atoms)
     this->selector = Selector(selector_file_path);
     // initialize protocol
-
+    this->protocol = Protocol(this->pose_in, this->selector);
 
 }
 

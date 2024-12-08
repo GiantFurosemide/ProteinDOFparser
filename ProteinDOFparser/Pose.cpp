@@ -10,9 +10,16 @@
  * Poes implementation
  */
 
+Pose::Pose()
+{
+}
 
-void Pose::init() {
+Pose::Pose(std::string input_file_path)
+{
+}
 
+void Pose::init()
+{
 }
 
 /**
