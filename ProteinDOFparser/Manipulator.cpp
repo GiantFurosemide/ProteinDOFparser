@@ -9,6 +9,11 @@
 /**
  * manipulator implementation
  */
+Manipulator::Manipulator() : pose_in(""), pose_out("") {
+    // initialize parameters
+    init();
+}
+
 /**
  * @brief Read command line arguments and store them in manipulator's parameters
  * @param argc Number of arguments
@@ -37,8 +42,12 @@ void Manipulator::init() {
     // initialize selector (default: all atoms)
     this->selector = Selector(selector_file_path);
     // initialize protocol
-
-
+    this->protocol = Protocol(this->parameters);
+    // initialize energy score function
+    this->energy_score_function = EnergyScoreFunction(this->parameters);
+    // initialize pose_out
+    this->pose_out = Pose(output_file_path);
+    
 }
 
 /**

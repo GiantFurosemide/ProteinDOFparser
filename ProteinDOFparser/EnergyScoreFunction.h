@@ -9,6 +9,9 @@
 
 #include "ScoreFunctionWeight.h"
 class EnergyScoreFunction {
+public:
+    Parameter parameters;
+    EnergyScoreFunction(Parameter parameters);
 };
 
 #endif //_ENERGYSCOREFUNCTION_H

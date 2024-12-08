@@ -10,6 +10,9 @@
 #include "ProteinDOFparser_common.h"
 
 class Protocol {
+public:
+    Parameter parameters;
+    Protocol(Parameter parameters);
 };
 
 #endif //_PROTOCOL_H
