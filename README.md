@@ -1,5 +1,5 @@
 # ProteinDOFparser
-
+/* A Practice Project */
 A tool to manipulate DOF of protein for structural analysis and generation.
 
 ## Rosetta philosophy
